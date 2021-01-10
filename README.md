@@ -1,4 +1,4 @@
-# ThE SilveR ScreeN - A Blog App about Movies and Everything re, visualizing all theblated
+# BCalendar 
 
 > BCalendar is a modern application to help enterprises manage its company space.
 > With BCalendar it is easy to manage rooms and booking meetings quickly saving time and optimizing your company workflow.
