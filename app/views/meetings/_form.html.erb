@@ -12,13 +12,8 @@
     </div>
   <% end %>
 
-  
+  <%= form.hidden_field :room_id, value: @new_meeting_info[:room_id] %>
   <%= form.hidden_field :user_id, value: current_user.id %>
-
-  <div class="field">
-    <%= form.label :room_id %>
-    <%= form.number_field :room_id %>
-  </div>
 
   <div class="field">
     <%= form.label :title %>
