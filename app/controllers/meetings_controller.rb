@@ -20,7 +20,7 @@ class MeetingsController < ApplicationController
   # POST /meetings
   def create
     @meeting = Meeting.new(meeting_params)
-
+    @meeting.hour_start = params["start_time(4i)"]
     respond_to do |format|
       if @meeting.save
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
