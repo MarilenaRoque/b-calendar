@@ -1,3 +1,5 @@
+<h1> Room: <%= @new_meeting_info[:room_id] %> </h1>
+<h1> Date: <%= @new_meeting_info[:date] %> </h1>
 
 <%= form_with(model: meeting, local: true) do |form| %>
   <% if meeting.errors.any? %>
@@ -14,6 +16,7 @@
 
   <%= form.hidden_field :room_id, value: @new_meeting_info[:room_id] %>
   <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :start_time, value: @new_meeting_info[:date] %>
 
   <div class="field">
     <%= form.label :title %>
@@ -23,11 +26,6 @@
   <div class="field">
     <%= form.label :description %>
     <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
   </div>
 
   <div class="actions">
