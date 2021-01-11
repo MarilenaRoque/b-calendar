@@ -7,11 +7,8 @@
 
 <%= month_calendar(events: @room.meetings) do |date, meetings| %>
   <%= date.day %>
-  <% meetings.each do |meeting| %>
-    <div>
-      <%= meeting.start_time.hour %>
-      <%= meeting.title %>
-    </div>
+  <% 8.upto(17) do |i| %>
+    <%= availability(meetings, i) %>
   <% end %>
 <% end %>
 
