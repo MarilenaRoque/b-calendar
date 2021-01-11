@@ -1,20 +1,17 @@
 module MeetingsHelper
+
     def availability(meetings)
-        available = {
-            8 => true,
-            9 => true,
-            10 => true,
-            11 => true,
-            12 => true,
-            13 => true,
-            14 => true,
-            15 => true,
-            16 => true,
-            17 => true
-        }
-        meetings.each do |meet|
-            available[meet.start_time.hour] = false
+
+        available_array = []
+        8.upto(17) do |count|
+            available_array << count
         end
-        return available
+
+        meetings.each do |meet|
+            available_array.delete(meet.start_time.hour)
+        end
+
+        return available_array
     end
+
 end

@@ -2,6 +2,7 @@
 <h1> Date: <%= @new_meeting_info[:date] %> </h1>
 <h1> Date: <%= @new_meeting_info[:availables] %> </h1>
 
+
 <%= form_with(model: meeting, local: true) do |form| %>
   <% if meeting.errors.any? %>
     <div id="error_explanation">
