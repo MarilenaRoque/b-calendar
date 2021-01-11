@@ -9,7 +9,9 @@
 <%= month_calendar(events: @room.meetings) do |date, meetings| %>
   <h3>
     <%= date.day %>
-    <%= link_to "+", new_meeting_path(:info => {:room_id => @room.id, :date => date}) %>
+    <% availables = availability(meetings)%>
+    <%= availables %>
+    <%= link_to "+", new_meeting_path(:info => {:room_id => @room.id, :date => date, :availables => availables}) %>
 
   </h3>
   </br>
