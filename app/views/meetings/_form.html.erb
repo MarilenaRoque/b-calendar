@@ -16,6 +16,13 @@
     </div>
   <% end %>
 
+  <% @new_meeting_info[:availables].each do |time| %>
+    <span>
+      <%= form.check_box("times_list", {:multiple => true}, time, nil ) %>
+      <label><%= time.to_i < 10 ? "0#{time}" : time.to_s %></label>
+    </span>
+  <% end %>
+
   <%= form.hidden_field :room_id, value: @new_meeting_info[:room_id] %>
   <%= form.hidden_field :user_id, value: current_user.id %>
   <%= form.hidden_field :start_time, value: @new_meeting_info[:date] %>

@@ -20,14 +20,24 @@ class MeetingsController < ApplicationController
 
   # POST /meetings
   def create
-    @meeting = Meeting.new(meeting_params)
-    @meeting.hour_start = @meeting.start_time.hour
-
+    saved = true
+    if params[:meeting][:times_list]
+      params[:meeting][:times_list].each do |time|
+        @meeting = Meeting.new(meeting_params)
+        @meeting.start_time = @meeting.start_time.change(hour: time)
+        @meeting.hour_start = @meeting.start_time.hour
+        if !@meeting.save
+          saved = false
+        end
+      end
+    else
+      saved = false
+    end
     respond_to do |format|
-      if @meeting.save
-        format.html { redirect_to @meeting, notice: "Meeting was successfully created." }
+      if saved
+        format.html { redirect_to "/rooms/#{@meeting.room_id}", notice: "Meeting was successfully created." }
       else
-        format.html { render :new, notice: "#{params["start_time(4i)"]}" }
+        format.html { redirect_to "/rooms", notice: "Some of your meetings was not created successfully, verify the info and try again." }
       end
     end
   end
@@ -52,6 +62,6 @@ class MeetingsController < ApplicationController
       params.require(:info).permit(:room_id, :date, availables: []) 
     end
     def meeting_params
-      params.require(:meeting).permit(:user_id, :room_id, :title, :description, :start_time)
+      params.require(:meeting).permit(:user_id, :room_id, :title, :description, :start_time, :times_list)
     end
 end
