@@ -1,0 +1,7 @@
+<ul class="middle d-flex align-items-center ">
+   
+</ul>
+<div class="right">
+	<span>You are Logged In, <%= current_user.username%></span> |
+    <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, :class => "navbar-links" %>
+</div>

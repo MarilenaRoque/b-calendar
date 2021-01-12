@@ -10,7 +10,6 @@
   <h3>
     <%= date.day %>
     <% availables = availability(meetings)%>
-    <%= availables %>
     <%= link_to "+", new_meeting_path(:info => {:room_id => @room.id, :date => date, :availables => availables}) %>
 
   </h3>

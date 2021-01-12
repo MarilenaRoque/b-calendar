@@ -37,7 +37,8 @@ class MeetingsController < ApplicationController
       if saved
         format.html { redirect_to "/rooms/#{@meeting.room_id}", notice: "Meeting was successfully created." }
       else
-        format.html { redirect_to "/rooms/#{@meeting.room_id}", notice: @meeting.errors }
+        flash[:error] = "Title can't be empty"
+        format.html { render :new }
       end
     end
   end
