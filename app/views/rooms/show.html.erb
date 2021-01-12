@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Number:</strong>
-  <strong><%= @room.number %></strong>
-</p>
+<h1>Room: <%= @room.number %></h1>
 
 
 <%= month_calendar(events: @room.meetings) do |date, meetings| %>
@@ -17,7 +14,7 @@
       <p class="meetings-title"><span class= "blue">&#11044; </span><%= "  #{meeting.start_time.hour}h #{meeting.title}" %></p>
     <% end %>
   </div>
-  <p class="new-meet-link"><%= link_to image_tag("new-meeting.svg" , size: "50x25", alt: "Add Icon"), new_meeting_path(:info => {:room_id => @room.id, :date => date, :availables => availables}) %></p>
+  <p class="new-meet-link"><%= link_to image_tag("add-icon.svg" , size: "20x20", alt: "Add Icon"), new_meeting_path(:info => {:room_id => @room.id, :date => date, :availables => availables}) %></p>
 <% end %>
 
 <%= link_to 'Back', rooms_path %>

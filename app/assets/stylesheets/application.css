@@ -44,9 +44,10 @@ h1 {
 }
 
 h1 {
-    background-color: #78767a;
+    background-color: #C22F29;
     color: white;
     font-weight: bold;
+    font-size: 30px;
 }
 
 .room-number {
@@ -91,9 +92,16 @@ h5 {
     margin-bottom: 20px;
 }
 
-
+.prev-month, .next-month {
+    color: #999;
+}
 
 .blue {
     font-size: 10px;
     color: #07A1DD;
 }
+
+.day {
+    font-size: 12px;
+}
+
