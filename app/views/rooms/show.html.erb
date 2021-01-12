@@ -2,7 +2,23 @@
 
 <p>
   <strong>Number:</strong>
-  <%= @room.number %>
+  <strong><%= @room.number %></strong>
 </p>
+
+
+<%= month_calendar(events: @room.meetings) do |date, meetings| %>
+  <h3>
+    <%= date.day %>
+    <% availables = availability(meetings)%>
+    <%= availables %>
+    <%= link_to "+", new_meeting_path(:info => {:room_id => @room.id, :date => date, :availables => availables}) %>
+
+  </h3>
+  </br>
+  <% meetings.each do |meeting|%>
+    <%= "#{meeting.start_time.hour}h #{meeting.title}" %>
+    </br>
+  <% end %>
+<% end %>
 
 <%= link_to 'Back', rooms_path %>

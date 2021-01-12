@@ -1,0 +1,43 @@
+<h1> Room: <%= @new_meeting_info[:room_id] %> </h1>
+<h1> Date: <%= @new_meeting_info[:date] %> </h1>
+<h1> Date: <%= @new_meeting_info[:availables] %> </h1>
+
+
+<%= form_with(model: meeting, local: true) do |form| %>
+  <% if meeting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+      <ul>
+        <% meeting.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% @new_meeting_info[:availables].each do |time| %>
+    <span>
+      <%= form.check_box("times_list", {:multiple => true}, time, nil ) %>
+      <label><%= time.to_i < 10 ? "0#{time}" : time.to_s %></label>
+    </span>
+  <% end %>
+
+  <%= form.hidden_field :room_id, value: @new_meeting_info[:room_id] %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :start_time, value: @new_meeting_info[:date] %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
