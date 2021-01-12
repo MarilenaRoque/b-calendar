@@ -10,7 +10,7 @@ a:hover {
   color: black;
 }
 
-.new_user, .new-room {
+.new_user, .new-room, .new-meeting {
   margin: auto;
   width: 30%;
 }
