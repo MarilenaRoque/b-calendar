@@ -136,3 +136,12 @@ h5 {
     margin-bottom: 0;
 }
 
+.calendar-heading {
+    padding: 5px;
+}
+
+.calendar-title {
+    font-weight: bold;
+    font-size: 25px;
+}
+
