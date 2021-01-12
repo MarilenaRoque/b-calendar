@@ -114,3 +114,25 @@ h5 {
     display: none;
 }
 
+.day-calendar {
+    padding: 10px;
+    border: solid 1px #747375;
+    border-radius: 15px;
+}
+
+.checks{
+    margin: 0px;
+    display: block;
+}
+
+.day-title {
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    background-color: #747375;
+}
+
+.checks label {
+    margin-bottom: 0;
+}
+

@@ -1,6 +1,3 @@
-<p> Room: <%= @new_meeting_info[:room_id] %> </p>
-<p> Date: <%= @new_meeting_info[:date] %> </p>
-
 
 <%= form_with(model: meeting, local: true, class: 'new-meeting') do |form| %>
   <% if meeting.errors.any? %>
@@ -14,13 +11,17 @@
       </ul>
     </div>
   <% end %>
+  <div class="day-calendar">
+    <p class="day-title"> Date: <%= @new_meeting_info[:date] %> </p>
+    <% @new_meeting_info[:availables].each do |time| %>
+      <span class="checks">
+      <span><%= form.check_box("times_list", {:multiple => true}, time, nil ) %></span>
+        <label><%= time.to_i < 10 ? "0#{time}h" : "#{time.to_s}h" %></label> 
+      </span>
+    <% end %>
+  </div>
 
-  <% @new_meeting_info[:availables].each do |time| %>
-    <span>
-      <%= form.check_box("times_list", {:multiple => true}, time, nil ) %>
-      <label><%= time.to_i < 10 ? "0#{time}" : time.to_s %></label>
-    </span>
-  <% end %>
+  </br>
 
   <%= form.hidden_field :room_id, value: @new_meeting_info[:room_id] %>
   <%= form.hidden_field :user_id, value: current_user.id %>
@@ -40,4 +41,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  </br>
+  <%= link_to 'Back', rooms_path %>
 <% end %>
