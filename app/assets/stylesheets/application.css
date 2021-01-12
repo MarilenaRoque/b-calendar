@@ -56,6 +56,44 @@ h1 {
     text-align: center;
 }
 
-.room-box {
+table {
+    table-layout: fixed ;
+    width: 100% ;
+
+}
+td {
+    width: 14.5% ;
+    position: relative;
+    padding-bottom: 0px;
 }
 
+th {
+    text-align: center;
+}
+
+
+.meetings-title {
+    margin: 0px;
+    font-size: 15px;
+}
+
+.new-meet-link {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+
+h5 {
+    text-align: center;
+}
+
+.meetings {
+    margin-bottom: 20px;
+}
+
+
+
+.blue {
+    font-size: 10px;
+    color: #07A1DD;
+}
