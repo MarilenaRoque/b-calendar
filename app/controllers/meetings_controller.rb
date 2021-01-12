@@ -37,7 +37,7 @@ class MeetingsController < ApplicationController
       if saved
         format.html { redirect_to "/rooms/#{@meeting.room_id}", notice: "Meeting was successfully created." }
       else
-        format.html { redirect_to "/rooms", notice: "Some of your meetings was not created successfully, verify the info and try again." }
+        format.html { redirect_to "/rooms/#{@meeting.room_id}", notice: @meeting.errors }
       end
     end
   end

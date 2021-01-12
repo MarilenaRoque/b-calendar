@@ -1,5 +1,6 @@
 class Meeting < ApplicationRecord
     belongs_to :user
     belongs_to :room
-    validates :hour_start, presence: true
+    validates :title, presence: true
+    validates :start_time, uniqueness: { scope: :room_id}
 end
