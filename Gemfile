@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Calendar render tool
 gem "simple_calendar", "~> 2.0"
+gem 'shoulda', '~> 4.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
