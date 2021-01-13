@@ -1,12 +1,6 @@
 class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:show, :destroy]
 
-  # GET /meetings
-  # GET /meetings.json
-  def index
-    @meetings = Meeting.all
-  end
-
   # GET /meetings/1
   def show
   end
@@ -37,7 +31,7 @@ class MeetingsController < ApplicationController
       if saved
         format.html { redirect_to "/rooms/#{@meeting.room_id}", notice: "Meeting was successfully created." }
       else
-        format.html { redirect_to "/rooms/#{@meeting.room_id}", notice: @meeting.errors }
+        format.html { redirect_to "/rooms/#{params[:meeting][:room_id]}", notice: @meeting ? @meeting.errors.full_messages : 'No time period defined' }
       end
     end
   end
