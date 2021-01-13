@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :meetings
+  resources :meetings, except: [:index, :edit, :update]
   resources :rooms, except: [:edit, :update]
   root to: "rooms#index"
   devise_for :users

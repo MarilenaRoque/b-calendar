@@ -12,10 +12,17 @@
   <body>
   <nav class="d-flex justify-content-between align-items-center px-4 py-2">
     <div class="left">
-      <%= image_tag("text-logo.svg" , size: "200x60", alt: "Main Icon") %>
+      <%= link_to image_tag("text-logo.svg" , size: "200x60", alt: "Main Icon"), rooms_path %>
     </div>
+
     <%= load_nav %>
   </nav>
+  <% if notice %>
+    <p id="notice" class="alert alert-warning text-center"><%= notice %></p>
+  <% end %>
+  <div class="d-flex justify-content-center">
+    <%= link_to 'HOME  ', rooms_path, :class => 'text-center' %> | <%= link_to '  ROOMS', rooms_path, :class => 'text-center' %> 
+  </div>
     <div class='load-yield'>
       <%= yield %>
     </div>

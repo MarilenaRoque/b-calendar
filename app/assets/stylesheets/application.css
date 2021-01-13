@@ -161,3 +161,9 @@ footer {
     color:#C22F29;
 }
 
+.notice {
+    padding: 5px;
+    background-color: #FFF3CD;
+    border-bottom:#F8BD65;
+    border-top: #F8BD65;
+}
