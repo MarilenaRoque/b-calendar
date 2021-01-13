@@ -11,13 +11,18 @@
       </ul>
     </div>
   <% end %>
+
   <div class="day-calendar">
     <p class="day-title"> Date: <%= @new_meeting_info[:date] %> </p>
-    <% @new_meeting_info[:availables].each do |time| %>
-      <span class="checks">
-      <span><%= form.check_box("times_list", {:multiple => true}, time, nil ) %></span>
-        <label><%= time.to_i < 10 ? "0#{time}h" : "#{time.to_s}h" %></label> 
-      </span>
+    <% if @new_meeting_info[:availables] %>
+      <% @new_meeting_info[:availables].each do |time| %>
+        <span class="checks">
+        <span><%= form.check_box("times_list", {:multiple => true}, time, nil ) %></span>
+          <label><%= time.to_i < 10 ? "0#{time}h" : "#{time.to_s}h" %></label> 
+        </span>
+      <% end %>
+    <% else %>
+        <span> No time available for this date. </span>
     <% end %>
   </div>
 
