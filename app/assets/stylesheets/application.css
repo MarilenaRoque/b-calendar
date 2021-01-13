@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  min-height: 100vh;
+  padding-bottom: 50px;
 }
 
 a {
@@ -60,12 +62,15 @@ h1 {
 table {
     table-layout: fixed ;
     width: 100% ;
-
 }
 td {
     width: 14.5% ;
     position: relative;
     padding-bottom: 0px;
+}
+
+.tr {
+    height: 200px;
 }
 
 th {
@@ -143,5 +148,16 @@ h5 {
 .calendar-title {
     font-weight: bold;
     font-size: 25px;
+}
+
+footer {
+    background-color: #747375;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.text_red {
+    color:#C22F29;
 }
 
