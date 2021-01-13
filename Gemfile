@@ -58,3 +58,5 @@ group :test do
   gem 'webdrivers'
   gem 'database_cleaner-active_record'
 end
+
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
