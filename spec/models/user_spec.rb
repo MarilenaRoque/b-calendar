@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
     # Creating a subject to test user
+    
 
     let(:subject) do
-        described_class.create(
+        described_class.new(
           email: 'testx@mail.com',
           created_at: '2020-09-21 22:35:32',
           updated_at: '2020-09-21 22:35:32',
