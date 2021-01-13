@@ -21,7 +21,8 @@
     <p id="notice" class="alert alert-warning text-center"><%= notice %></p>
   <% end %>
   <div class="d-flex justify-content-center">
-    <%= link_to 'HOME  ', rooms_path, :class => 'text-center' %> | <%= link_to '  ROOMS', rooms_path, :class => 'text-center' %> 
+  
+  <%= link_to 'HOME  ', rooms_path, :class => 'text-center link-nav' %> - <%= link_to ' NEW ROOM  ', new_room_path, :class => 'text-center link-nav' %> - <%= link_to '  ROOMS', rooms_path, :class => 'text-center link-nav' %> 
   </div>
     <div class='load-yield'>
       <%= yield %>
