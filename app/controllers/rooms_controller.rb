@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: [:show, :destroy]
+  before_action :set_room, only: %i[show destroy]
 
   # GET /rooms
   def index
@@ -7,9 +7,7 @@ class RoomsController < ApplicationController
   end
 
   # GET /rooms/1
-  def show
-
-  end
+  def show; end
 
   # GET /rooms/new
   def new
@@ -29,7 +27,6 @@ class RoomsController < ApplicationController
     end
   end
 
-
   # DELETE /rooms/1
   def destroy
     @room.destroy
@@ -39,13 +36,14 @@ class RoomsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_room
-      @room = Room.includes(:meetings).find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def room_params
-      params.require(:room).permit(:number)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_room
+    @room = Room.includes(:meetings).find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def room_params
+    params.require(:room).permit(:number)
+  end
 end
