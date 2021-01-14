@@ -1,15 +1,37 @@
-# BCalendar 
+# BCalendar
 
-> BCalendar is a modern application to help enterprises manage its company space.
-> With BCalendar it is easy to manage rooms and booking meetings quickly saving time and optimizing your company workflow.
+![Authentication](./app/assets/images/text-logo.svg)
 
-## You can access the blog [HERE](https://quiet-thicket-77774.herokuapp.com/)
+> BCalendar is a modern application to help enterprises manage their company space.
+> With BCalendar it is easy to manage rooms and booking meetings quickly, saving time and optimizing your company workflow.
+
+## You can access our application [HERE](https://quiet-thicket-77774.herokuapp.com/)
+
+## Usage
+
+- You will need to sign up to have access to our application features. Please provide the information, no verification is required.
+
+![Authentication](./app/assets/images/authentication.gif)
+
+- The main page will display all the rooms available. You can create a new room by clicking on the 'plus' button in the 'Add Room' square. Or just use the option Create room in the navigation bar.
+- Clicking on the calendar icon you can access the calendar to check the meetings in that room.
+- To delete a room you should click on the 'Trash Icon'. Deleting a room all the meetings of it will be automatically deleted.
+
+![Authentication](./app/assets/images/room.gif)
+
+- To create a new meeting you should navigate to the day in the calendar of the room and click on the plus button.
+- Provide the info required and make sure to check the periods when the meeting will happen.
+
+![Authentication](./app/assets/images/meeting.gif)
+
 
 ## Development Info
 
+This is a rails solution, using PostgreSQL for the database.
+
 ![Schema](./app/assets/images/erd.png)
 
-The project is based in 3 models
+The project is based on 3 models
 
 - User
 - Room
@@ -17,7 +39,7 @@ The project is based in 3 models
 
 Associated to each other as described below:
 
-- A User can have zero or many 
+- A user can have zero or many 
 meetings
 - A Room can have zero or many meetings
 - A Meeting belongs to a user and a room.
@@ -28,15 +50,12 @@ If you're no authenticated User, you can
 
 - Sign Up
 - Sign In
-- See the Rooms and its calendar.
 
-If you are an authenticated User, you can:
+If you are an authenticated user, you can:
 
 - Create or Delete a Room
-- See all the rooms and have access to its calendar
+- See all the rooms and have access to their calendar
 - Make a room reservation in the available periods
-- Delete your own reservations.
-
 
 ## Built With
 
@@ -59,7 +78,7 @@ To get a local copy up and running follow these simple example steps.
 - Install all the dependencies
 > `bundle install`
 
-- Iniciate your database running
+- Initiate your database running
 > `rails db:create`
 
 - Set all the database running
@@ -73,7 +92,7 @@ You can run the following command on your terminal to run the tests.
 
 > ` rspec .`
 
-or customize them changing the files inside the spec folder.
+or customize them by changing the files inside the spec folder.
 
 
 ### Running Locally
