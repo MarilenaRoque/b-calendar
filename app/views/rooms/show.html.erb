@@ -15,7 +15,7 @@
       <p class="meetings-title"><span class= "blue">&#11044; </span><%= "  #{meeting.start_time.hour}h #{meeting.title}" %></p>
     <% end %>
   </div>
-  <p class="new-meet-link"><%= link_to image_tag("add-icon.svg" , size: "20x20", alt: "Add Icon"), new_meeting_path(:info => {:room_id => @room.id, :date => date, :availables => availables}) %></p>
+  <p class="new-meet-link"><%= link_to image_tag("add-icon.svg" , size: "20x20", alt: "Add Icon", class: 'add-image'), new_meeting_path(:info => {:room_id => @room.id, :date => date, :availables => availables}) %></p>
 <% end %>
 
 
