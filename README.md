@@ -3,7 +3,7 @@
 > BCalendar is a modern application to help enterprises manage its company space.
 > With BCalendar it is easy to manage rooms and booking meetings quickly saving time and optimizing your company workflow.
 
-## You can access the blog [HERE]()
+## You can access the blog [HERE](https://quiet-thicket-77774.herokuapp.com/)
 
 ## Development Info
 
