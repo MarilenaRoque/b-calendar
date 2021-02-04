@@ -1,0 +1,21 @@
+
+<%= link_to '<< Back', rooms_path %>
+</br>
+<h1>Room: <%= @room.number %></h1>
+
+
+<%= month_calendar(events: @room.meetings) do |date, meetings| %>
+  <h5>
+    <%= date.day %>
+    <% availables = availability(meetings)%>
+  </h5>
+  </br>
+  <div class="meetings">
+    <% meetings.each do |meeting|%>
+      <p class="meetings-title"><span class= "blue">&#11044; </span><%= "  #{meeting.start_time.hour}h #{meeting.title}" %></p>
+    <% end %>
+  </div>
+  <p class="new-meet-link"><%= link_to image_tag("add-icon.svg" , size: "20x20", alt: "Add Icon", class: 'add-image'), new_meeting_path(:info => {:room_id => @room.id, :date => date, :availables => availables}) %></p>
+<% end %>
+
+
