@@ -1,0 +1,23 @@
+<%= form_with(model: room, local: true, class: 'new-room') do |form| %>
+  <% if room.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% room.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+  </br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+          </br>
+  <%= link_to '<< Back', rooms_path %>
+<% end %>

@@ -1,0 +1,30 @@
+<h1>Rooms</h1>
+
+<div class='rooms-box row'>
+  <% @rooms.each do |room| %>
+    <div class= 'col-3 room-card' >
+    <div class= 'card'>
+      <h5 class='room-number'><%= room.number %></h5>
+      </br>
+      <div>
+        <%= link_to 'Calendar', room %>
+        <%= link_to image_tag("calendar.svg" , size: "25x25", alt: "Delete Icon"), room %>
+        <%= link_to image_tag("trash-icon.svg" , size: "25x25", alt: "Delete Icon"), room, method: :delete, data: { confirm: 'All the meetings in this room will be deleted too. Are you sure?' } %>
+      </div>
+    </div>
+    </div>
+  <% end %>
+  <div class= 'col-3 room-card' >
+    <div class= 'card'>
+      <h5 class='room-number'>Add Room</h5>
+      
+      <%= link_to  image_tag("add-icon.svg" , size: "35x35", alt: "Add Icon"), new_room_path, :class => 'center' %>
+    </div>
+  </div>
+
+</div>
+
+
+<br>
+
+

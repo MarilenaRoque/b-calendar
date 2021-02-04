@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+.new_user, .new-room, .new-meeting {
+  margin: auto;
+  width: 30%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.room-card {
+    min-height: 80px;
+    padding: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    min-height: 90px;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  ;
+}
+
+
+.load-yield {
+    margin: 15px;
+}
+
+h1 {
+    background-color: #C22F29;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.room-number {
+    font-size: 30px;
+    color: #747375;
+    font-weight: bold;
+    text-align: center;
+}
+
+table {
+    table-layout: fixed ;
+    width: 100% ;
+}
+td {
+    width: 14.5% ;
+    position: relative;
+    padding-bottom: 0px;
+}
+
+.tr {
+    height: 200px;
+}
+
+th {
+    text-align: center;
+}
+
+
+.meetings-title {
+    margin: 0px;
+    font-size: 15px;
+}
+
+.new-meet-link {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+
+h5 {
+    text-align: center;
+}
+
+.meetings {
+    margin-bottom: 20px;
+}
+
+.prev-month, .next-month {
+    color: #999;
+}
+
+.blue {
+    font-size: 10px;
+    color: #07A1DD;
+}
+
+.day {
+    font-size: 12px;
+}
+
+
+.wday-6 a{
+    display: none;
+}
+
+.wday-0 a{
+    display: none;
+}
+
+.day-calendar {
+    padding: 10px;
+    border: solid 1px #747375;
+    border-radius: 15px;
+}
+
+.checks{
+    margin: 0px;
+    display: block;
+}
+
+.day-title {
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    background-color: #747375;
+}
+
+.checks label {
+    margin-bottom: 0;
+}
+
+.calendar-heading {
+    padding: 5px;
+}
+
+.calendar-title {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+footer {
+    background-color: #747375;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.text_red {
+    color:#C22F29;
+}
+
+.notice {
+    padding: 5px;
+    background-color: #FFF3CD;
+    border-bottom:#F8BD65;
+    border-top: #F8BD65;
+}
+
+.link-nav {
+    margin: 5px;
+}

@@ -1,0 +1,51 @@
+
+<%= form_with(model: meeting, local: true, class: 'new-meeting') do |form| %>
+  <% if meeting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+      <ul>
+        <% meeting.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="day-calendar">
+    <p class="day-title"> Date: <%= @new_meeting_info[:date] %> </p>
+    <% if @new_meeting_info[:availables] %>
+      <% @new_meeting_info[:availables].each do |time| %>
+        <span class="checks">
+        <span><%= form.check_box("times_list", {:multiple => true}, time, nil ) %></span>
+          <label><%= time.to_i < 10 ? "0#{time}h" : "#{time.to_s}h" %></label> 
+        </span>
+      <% end %>
+    <% else %>
+        <span> No time available for this date. </span>
+    <% end %>
+  </div>
+
+  </br>
+
+  <%= form.hidden_field :room_id, value: @new_meeting_info[:room_id] %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :start_time, value: @new_meeting_info[:date] %>
+
+  <div class="field">
+    <%= form.label :title %></br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %></br>
+    <%= form.text_field :description %>
+  </div>
+  </br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  </br>
+  <%= link_to '<< Back', rooms_path %>
+<% end %>
